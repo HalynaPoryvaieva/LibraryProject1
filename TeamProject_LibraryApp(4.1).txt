@@ -132,6 +132,7 @@ Please select menu item:
 Описание методов
 ===================================================  
 
+   - `login(String username, String password)` - метод аутентификация администратора. Ввод логина и пароля, проверка корректности ввода данных
    - `addBook(Book book)`: void - создает новый объект Book и добавляет его в BookCatalog  
    - `removeBookByCatalogNumber(int catalogNumber)`: boolean - метод удаляет указанный элемент из BookCatalog  
    - `findBookById(String searchQuery, String type)`: Map<Book> -  
