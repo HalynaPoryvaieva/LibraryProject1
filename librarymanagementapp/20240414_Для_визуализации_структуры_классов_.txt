@@ -1,0 +1,64 @@
+vДля визуализации структуры классов и взаимодействия методов в приложении управления библиотекой "LibraryApp", я создам текстовое описание архитектуры. В данном случае, схематическое представление поможет разобраться в логике работы приложения и понять, как компоненты взаимодействуют друг с другом.
+
+### Классы и их методы:
+
+1. **Book** - Галина
+   - `author`: String
+   - `bookTitle`: String
+   - `genre`: String
+   - `publisher`: String
+   - `catalogNumber`: int - уникальный идентификатор записи
+   - `isInLibrary`: boolean - флаг книга в библиотеке или нет
+
+
+2. **BookCatalog** - Ярослав
+   - `books`: Map<Book> (поиск по `catalogNumber`, `bookTitle`)
+   - `addBook(Book book)`: void
+   - `removeBook(int catalogNumber)`: boolean
+   - `findBook(String searchQuery, String type)`: Map<Book>
+   - `sortBooks(String sortBy)`: void
+   - `printCatalog()`: void
+
+3. **User** - Андрей
+   - `name`: String
+   - `surname`: String
+   - `userId`: int
+
+4. **UserCard** - Андрей
+   - `user`: User
+   - `userBookList`: List<Book>
+   - `booksLimit`: int
+   - `borrowBook(Book book)`: boolean
+   - `returnBook(Book book)`: boolean
+   - `closeCard()`: void
+
+5. **LibraryApp** - Антон
+   - `bookCatalog`: BookCatalog
+   - `userCards`: Map<Integer, UserCard>
+   - `login(String username, String password)`: boolean
+   - `addNewUserCard(User user, int limit)`: void
+   - `closeUserCard(int userId)`: boolean
+   - `borrowBookFromLibrary(int userId, int catalogNumber)`: boolean
+   - `returnBookToLibrary(int userId, int catalogNumber)`: boolean
+
+### Взаимодействие классов:
+
+1. **LibraryApp**
+   - Управляет всеми операциями.
+   - Взаимодействует с `BookCatalog` для управления книгами.
+   - Использует `Map` для хранения `UserCard`, ассоциированных с `userId`.
+
+2. **BookCatalog**
+   - Хранит список книг и предоставляет методы для управления каталогом (добавление, удаление, поиск, сортировка).
+
+3. **UserCard**
+   - Представляет собой запись о пользователе, включая его текущие взятые книги и лимиты.
+   - Методы позволяют брать и возвращать книги, закрывать карточку пользователя.
+
+### Пример сценария использования:
+
+1. **Администратор** входит в систему через `LibraryApp`.
+2. Администратор добавляет новую книгу через `BookCatalog`.
+3. Создается новая `UserCard` для нового пользователя.
+4. Пользователь берет книгу; операция обрабатывается через `UserCard`.
+5. Книга возвращается в библиотеку через `UserCard`.
