@@ -62,7 +62,7 @@ LibraryApp - приложение управления библиотекой. �
    - `returnBookToLibrary(int userId, int catalogNumber)`: boolean
    - `exitMenu`: void
    
-6. General method - Антон
+6. Service method - Антон
    - UserInput
 
 ===================================================
