@@ -16,7 +16,7 @@ LibraryApp - приложение управления библиотекой. �
 Сущности (entity) и методы
 ===================================================
 
-1. **Book** - Галина
+1. **librarymanagementapp.Book.Book** - Галина
    - `author`: String
    - `bookTitle`: String
    - `genre`: String
@@ -26,12 +26,12 @@ LibraryApp - приложение управления библиотекой. �
 
 
 2. **BookCatalog** - Ярослав
-   - `books`: Map<Book> (поиск по `catalogNumber`, `bookTitle`)
-   - `addBook(Book book)`: void
+   - `books`: Map<librarymanagementapp.Book.Book> (поиск по `catalogNumber`, `bookTitle`)
+   - `addBook(librarymanagementapp.Book.Book book)`: void
    - `removeBookByCatalogNumber(int catalogNumber)`: boolean
-   - `findBookById(String searchQuery, String type)`: Map<Book>
-   - `findBookByAuthor(String searchQuery, String type)`: Map<Book>
-   - `findBookByBookTitle(String searchQuery, String type)`: Map<Book>
+   - `findBookById(String searchQuery, String type)`: Map<librarymanagementapp.Book.Book>
+   - `findBookByAuthor(String searchQuery, String type)`: Map<librarymanagementapp.Book.Book>
+   - `findBookByBookTitle(String searchQuery, String type)`: Map<librarymanagementapp.Book.Book>
    - `sortBooksByGenre(String sortBy)`: void
    - `sortBooksByAuthor(String sortBy)`: void
    - `sortBooksByAvailability(String sortBy)`: void
@@ -44,12 +44,12 @@ LibraryApp - приложение управления библиотекой. �
 
 4. **UserCard** - Андрей
    - `user`: User
-   - `userBookList`: List<Book>
+   - `userBookList`: List<librarymanagementapp.Book.Book>
    - `booksLimit`: int
    - `findUserCardByName`
    - `checkBooksLimit`: void 
-   - `borrowBook(Book book)`: boolean
-   - `returnBook(Book book)`: boolean
+   - `borrowBook(librarymanagementapp.Book.Book book)`: boolean
+   - `returnBook(librarymanagementapp.Book.Book book)`: boolean
    - `closeCard()`: void
    - `reopenUserCard()`: void
 
@@ -136,11 +136,11 @@ Please select menu item:
 ===================================================  
 
    - `login(String username, String password)` - метод аутентификация администратора. Ввод логина и пароля, проверка корректности ввода данных
-   - `addBook(Book book)`: void - создает новый объект Book и добавляет его в BookCatalog  
+   - `addBook(librarymanagementapp.Book.Book book)`: void - создает новый объект librarymanagementapp.Book.Book и добавляет его в BookCatalog
    - `removeBookByCatalogNumber(int catalogNumber)`: boolean - метод удаляет указанный элемент из BookCatalog  
-   - `findBookById(String searchQuery, String type)`: Map<Book> -  
-   - `findBookByAuthor(String searchQuery, String type)`: Map<Book>
-   - `findBookByBookTitle(String searchQuery, String type)`: Map<Book>
+   - `findBookById(String searchQuery, String type)`: Map<librarymanagementapp.Book.Book> -
+   - `findBookByAuthor(String searchQuery, String type)`: Map<librarymanagementapp.Book.Book>
+   - `findBookByBookTitle(String searchQuery, String type)`: Map<librarymanagementapp.Book.Book>
    - `sortBooksByGenre(String sortBy)`: void
    - `sortBooksByAuthor(String sortBy)`: void
    - `sortBooksByAvailability(String sortBy)`: void
@@ -152,7 +152,7 @@ Please select menu item:
    - `closeUserCard(int userId)`: boolean - закрыть доступ пользователю в библиотеку
    - `reopenUserCard(int userId)`: boolean - возобновить доступ пользователю в библиотеку
    - `borrowBookFromLibrary(int userId, int catalogNumber)`: boolean - выдать книгу читателю User и внести её в userBookList, при условии, что книга существует в каталоге книг (BookCatalog), есть в наличии в библиотеке (isInLibrary=true) и у пользователя не превышен лимит книг (booksLimit).
-   - `returnBookToLibrary(int userId, int catalogNumber)`: boolean - вернуть книгу в библиотеку. Параметр isInLibrary внутри Book меняется на true. Вносим изменения в UserBookList и booksLimit внутри UserCard
+   - `returnBookToLibrary(int userId, int catalogNumber)`: boolean - вернуть книгу в библиотеку. Параметр isInLibrary внутри librarymanagementapp.Book.Book меняется на true. Вносим изменения в UserBookList и booksLimit внутри UserCard
    - `exitMenu`: void - выход из программы
    - `UserInput` - получение данных, введенных администратором с консоли
 
