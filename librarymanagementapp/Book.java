@@ -6,7 +6,7 @@ public class Book {
         private String bookTitle;
         private String genre;
         private String publisher;
-        private int catalogNumber;
+        private Integer catalogNumber;
         private boolean isInLibrary;
 
         public Book(String author, String bookTitle, String genre, String publisher, int catalogNumber, boolean isInLibrary) {
@@ -50,7 +50,7 @@ public class Book {
             this.publisher = publisher;
         }
 
-        public int getCatalogNumber() {
+        public Integer getCatalogNumber() {
             return catalogNumber;
         }
 
