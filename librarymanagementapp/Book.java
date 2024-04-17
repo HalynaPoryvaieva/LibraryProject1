@@ -9,7 +9,7 @@ public class Book {
         private Integer catalogNumber;
         private boolean isInLibrary;
 
-        public Book(String author, String bookTitle, String genre, String publisher, int catalogNumber, boolean isInLibrary) {
+        public Book(String author, String bookTitle, String genre, String publisher, Integer catalogNumber, boolean isInLibrary) {
             this.author = author;
             this.bookTitle = bookTitle;
             this.genre = genre;

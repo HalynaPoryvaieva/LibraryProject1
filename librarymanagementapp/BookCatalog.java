@@ -22,7 +22,7 @@ public class BookCatalog {
         return false;
     }
 
-    public Map<Integer, Book> findBook(String searchQuery, String type) {
+    public Map<Integer, Book> findBookByAuthor(String searchQuery, String type) {
         Map<Integer, Book> result = new HashMap<>();
 
         // Search by exact match of the author's name
