@@ -6,17 +6,13 @@ package librarymanagementapp;
  * @version 17-Apr-24
  */
 
-import librarymanagementapp.BookCatalog;
-import librarymanagementapp.User;
-import librarymanagementapp.UserCard;
-
 import java.util.HashMap;
 import java.util.Map;
 
-public class LibraryCard {
+public class UserCardService {
     private Map<Integer, UserCard> userCards;
 
-    public LibraryCard() {
+    public UserCardService() {
         BookCatalog bookCatalog = new BookCatalog();
         userCards = new HashMap<>();
     }
